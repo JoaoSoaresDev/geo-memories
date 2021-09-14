@@ -1,4 +1,6 @@
-﻿namespace GeoMemories
+﻿
+
+namespace GeoMemories
 {
     partial class Form1
     {

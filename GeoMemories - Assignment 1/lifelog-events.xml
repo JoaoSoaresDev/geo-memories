@@ -1,56 +1,48 @@
 ﻿<?xml version="1.0"?>
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2001/12/soap-envelope" encodingStyle="http://www.w3.org/2001/12/soap-encoding" >
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2001/12/soap-envelope" SOAP-ENV:encodingStyle="http://www.w3.org/2001/12/soap-encoding" >
   <SOAP-ENV:Body xmlns:lle="http://www.xyz.org/lifelogevents" >
     <lle:Event>
       <lle:eventid>ID1</lle:eventid>
       <lle:tweet>
-        <lle:text>This is some tweet in my day</lle:text>
-        <lle:location>
-          <lle:lat>999</lle:lat>
-          <lle:long>999</lle:long>
-        </lle:location>
-        <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+        <lle:text>I'm very hungry. I'm probably gonna get something at Maccas.</lle:text>
+        <lle:lat>400</lle:lat>
+        <lle:long>300</lle:long>
+        <lle:datetimestamp>15/2/2019 12:12:35</lle:datetimestamp>
       </lle:tweet>
     </lle:Event>
     <lle:Event>
       <lle:eventid>ID2</lle:eventid>
       <lle:facebook-status-update>
-        <lle:text>This is some status update in my day</lle:text>
-        <lle:location>
-          <lle:lat>999</lle:lat>
-          <lle:long>999</lle:long>
-        </lle:location>
-        <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+        <lle:text>I went today to watch a movie! It was amazing!</lle:text>
+        <lle:lat>367</lle:lat>
+        <lle:long>459</lle:long>
+        <lle:datetimestamp>20/4/2019 12:12:35</lle:datetimestamp>
       </lle:facebook-status-update>
     </lle:Event>
     <lle:Event>
       <lle:eventid>ID3</lle:eventid>
       <lle:photo>
-        <lle:filepath>/photos/image.jpg</lle:filepath>
-        <lle:location>
-          <lle:lat>999</lle:lat>
-          <lle:long>999</lle:long>
-        </lle:location>
+        <lle:filepath>/photos/friends.jpg</lle:filepath>
+        <lle:lat>650</lle:lat>
+        <lle:long>480</lle:long>
       </lle:photo>
     </lle:Event>
     <lle:Event>
       <lle:eventid>ID4</lle:eventid>
       <lle:video>
         <lle:filepath>/videos/film.mp4</lle:filepath>
-        <lle:location>
-          <lle:lat>999</lle:lat>
-          <lle:long>999</lle:long>
-        </lle:location>
+        <lle:lat>360</lle:lat>
+        <lle:long>870</lle:long>
         <lle:start-time>
-          <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+          <lle:datetimestamp>7/8/2010 10:12:35</lle:datetimestamp>
         </lle:start-time>
         <lle:end-time>
-          <lle:datetimestamp>datetimestamp</lle:datetimestamp>
+          <lle:datetimestamp>7/8/2020 10:12:45</lle:datetimestamp>
         </lle:end-time>
       </lle:video>
     </lle:Event>
     <lle:Event>
-      <lle:eventid>ID4</lle:eventid>
+      <lle:eventid>ID5</lle:eventid>
       <lle:tracklog>
         <lle:filepath>/tracklog/track.gpx</lle:filepath>
         <lle:data>

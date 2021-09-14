@@ -18,7 +18,7 @@ namespace GeoMemories
 
             lifelogs.loadLogs();
 
-            lifelogs.displayDic();
+            //lifelogs.displayDic();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
