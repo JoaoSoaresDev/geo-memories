@@ -14,10 +14,7 @@ namespace GeoMemories
         [STAThread]
         static void Main()
         {
-            lifelog lifelogs = new lifelog();
-
-            lifelogs.loadLogs();
-
+            
             //lifelogs.displayDic();
 
             Application.EnableVisualStyles();

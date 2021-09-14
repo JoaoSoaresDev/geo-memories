@@ -16,6 +16,37 @@ namespace GeoMemories
         {
             InitializeComponent();
         }
+        
+        private void DisplayTweets(Dictionary<string, string> Data)
+        {
+            
+
+            foreach (KeyValuePair<string, string> kpv in Data)
+            {
+                if (kpv.Value == "tweet")
+                {
+
+                    var picture = new PictureBox
+                    {
+                        Parent = perthMap,
+                        ImageLocation = "../../Assets/map-pointer.png",
+                        Name = "pictureBox",
+                        Size = new Size(50, 50),
+                        Location = new Point(400, 400),
+                        SizeMode = PictureBoxSizeMode.Zoom,
+                        BackColor = Color.Transparent,
+                        
+                    };
+
+                    this.Controls.Add(picture);
+
+                    picture.BringToFront();
+
+                    Console.WriteLine("It should add");
+
+                }
+            }
+        }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
@@ -28,8 +59,28 @@ namespace GeoMemories
 
         }
 
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("HELLO!");
+
+            lifelog lifelogs = new lifelog();
+
+            lifelogs.loadLogs();
+
+            foreach (KeyValuePair<string, Dictionary<string, string>> obj in lifelogs.Event)
+            {
+                Dictionary<string, string> Data = new Dictionary<string, string>();
+                Data = obj.Value;
+
+                DisplayTweets(Data);
+
+            }
         }
     }
 }

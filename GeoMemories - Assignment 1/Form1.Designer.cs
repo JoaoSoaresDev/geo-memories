@@ -22,6 +22,8 @@ namespace GeoMemories
             base.Dispose(disposing);
         }
 
+
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -39,9 +41,10 @@ namespace GeoMemories
             // 
             // closeButton
             // 
+            this.closeButton.BackColor = System.Drawing.Color.Transparent;
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(1392, 12);
+            this.closeButton.Location = new System.Drawing.Point(1382, 2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(36, 36);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -51,8 +54,9 @@ namespace GeoMemories
             // 
             // perthMap
             // 
+            this.perthMap.BackColor = System.Drawing.Color.Transparent;
             this.perthMap.Image = ((System.Drawing.Image)(resources.GetObject("perthMap.Image")));
-            this.perthMap.Location = new System.Drawing.Point(-181, -33);
+            this.perthMap.Location = new System.Drawing.Point(-185, -35);
             this.perthMap.Name = "perthMap";
             this.perthMap.Size = new System.Drawing.Size(1846, 861);
             this.perthMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

@@ -132,6 +132,8 @@ namespace GeoMemories
 
             Console.WriteLine(eventID);
 
+            eventInfo.Add("type", "tweet");
+
             foreach (var obj in eventinfo)
             {
                 Console.WriteLine(obj);
