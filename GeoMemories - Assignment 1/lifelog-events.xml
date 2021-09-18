@@ -11,6 +11,15 @@
       </lle:tweet>
     </lle:Event>
     <lle:Event>
+      <lle:eventid>ID5</lle:eventid>
+      <lle:tweet>
+        <lle:text>This is another tweet.</lle:text>
+        <lle:lat>300</lle:lat>
+        <lle:long>700</lle:long>
+        <lle:datetimestamp>15/2/2019 12:12:35</lle:datetimestamp>
+      </lle:tweet>
+    </lle:Event>
+    <lle:Event>
       <lle:eventid>ID2</lle:eventid>
       <lle:facebook-status-update>
         <lle:text>I went today to watch a movie! It was amazing!</lle:text>
@@ -22,8 +31,8 @@
     <lle:Event>
       <lle:eventid>ID3</lle:eventid>
       <lle:photo>
-        <lle:filepath>/photos/friends.jpg</lle:filepath>
-        <lle:lat>650</lle:lat>
+        <lle:filepath>/photos/profilePic.JPG</lle:filepath>
+        <lle:lat>200</lle:lat>
         <lle:long>480</lle:long>
       </lle:photo>
     </lle:Event>
@@ -40,21 +49,6 @@
           <lle:datetimestamp>7/8/2020 10:12:45</lle:datetimestamp>
         </lle:end-time>
       </lle:video>
-    </lle:Event>
-    <lle:Event>
-      <lle:eventid>ID5</lle:eventid>
-      <lle:tracklog>
-        <lle:filepath>/tracklog/track.gpx</lle:filepath>
-        <lle:data>
-          .....
-        </lle:data>
-        <lle:start-time>
-          <lle:datetimestamp>datetimestamp</lle:datetimestamp>
-        </lle:start-time>
-        <lle:end-time>
-          <lle:datetimestamp>datetimestamp</lle:datetimestamp>
-        </lle:end-time>
-      </lle:tracklog>
     </lle:Event>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

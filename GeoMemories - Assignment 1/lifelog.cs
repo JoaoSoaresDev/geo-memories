@@ -40,6 +40,8 @@ namespace GeoMemories
 
             Console.WriteLine(eventID);
 
+            eventInfo.Add("type", "tweet");
+
             foreach (var obj in eventinfo)
             {
                 Console.WriteLine(obj);
@@ -62,6 +64,8 @@ namespace GeoMemories
             .ToList();
 
             Console.WriteLine(eventID);
+
+            eventInfo.Add("type", "facebook-status-update");
 
             foreach (var obj in eventinfo)
             {
@@ -86,6 +90,8 @@ namespace GeoMemories
 
             Console.WriteLine(eventID);
 
+            eventInfo.Add("type", "photo");
+
             foreach (var obj in eventinfo)
             {
                 Console.WriteLine(obj);
@@ -108,6 +114,8 @@ namespace GeoMemories
             .ToList();
 
             Console.WriteLine(eventID);
+
+            eventInfo.Add("type", "video");
 
             foreach (var obj in eventinfo)
             {
@@ -132,7 +140,7 @@ namespace GeoMemories
 
             Console.WriteLine(eventID);
 
-            eventInfo.Add("type", "tweet");
+            eventInfo.Add("type", "tracklog");
 
             foreach (var obj in eventinfo)
             {

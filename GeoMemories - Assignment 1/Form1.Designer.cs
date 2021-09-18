@@ -23,7 +23,6 @@ namespace GeoMemories
         }
 
 
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -63,6 +62,7 @@ namespace GeoMemories
             this.perthMap.TabIndex = 1;
             this.perthMap.TabStop = false;
             this.perthMap.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.perthMap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // Form1
             // 
