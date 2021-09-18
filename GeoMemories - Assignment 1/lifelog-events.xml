@@ -39,7 +39,7 @@
     <lle:Event>
       <lle:eventid>ID4</lle:eventid>
       <lle:video>
-        <lle:filepath>/videos/film.mp4</lle:filepath>
+        <lle:filepath>\videos\cute.mp4</lle:filepath>
         <lle:lat>360</lle:lat>
         <lle:long>870</lle:long>
         <lle:start-time>

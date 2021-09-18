@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using WMPLib;
+using AxWMPLib;
+using System.Reflection;
+using System.IO;
 
 namespace GeoMemories
 {
@@ -28,6 +32,17 @@ namespace GeoMemories
         public Form1()
         {
             InitializeComponent();
+        }
+
+        // Function to move window without borders
+        private void pictureBox1_MouseDown(object sender,
+        System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
         // Check if event is a tweet, create picturebox with tweet icon and
@@ -328,9 +343,9 @@ namespace GeoMemories
             foreach (KeyValuePair<string, string> kpv in Data)
             {
                 string xPos = "", yPos = "";
-                string tweetText = "", dateTime = "";
+                string filePath = "";
 
-                if (kpv.Value == "tweet")
+                if (kpv.Value == "video")
                 {
                     Data.ToList().ForEach(x => Console.WriteLine(x.Key + " " + x.Value));
 
@@ -340,16 +355,16 @@ namespace GeoMemories
                             xPos = pv.Value;
                         else if (pv.Key == "lat")
                             yPos = pv.Value;
-                        else if (pv.Key == "text")
-                            tweetText = pv.Value;
-                        else if (pv.Key == "datetimestamp")
-                            dateTime = pv.Value;
+                        else if (pv.Key == "filepath")
+                            filePath = pv.Value;
 
                     }
 
+
+
                     var picture = new PictureBox
                     {
-                        ImageLocation = "../../Assets/map-pointer-twitter.png",
+                        ImageLocation = "../../Assets/map-pointer-video.png",
                         Name = "pictureBox",
                         Size = new Size(50, 50),
                         Location = new Point(Int32.Parse(xPos), Int32.Parse(yPos)),
@@ -362,20 +377,24 @@ namespace GeoMemories
                     picture.Parent = perthMap;
                     picture.BringToFront();
 
-                    var textbox = new TextBox
-                    {
-                        Parent = perthMap,
-                        Multiline = true,
-                        Size = new Size(150, 100),
-                        ReadOnly = true,
-                        TabStop = false,
-                        Location = new Point(Int32.Parse(xPos) + 35, Int32.Parse(yPos) + 65),
-                        Visible = false,
-                        Text = ("Tweet: '" + tweetText + "' \r\n\r\nDate/Time: " + dateTime),
-                    };
+                    var mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+                    
+                    this.Controls.Add(mediaPlayer);
 
-                    textbox.BringToFront();
+                    mediaPlayer.Parent = perthMap;
+                    mediaPlayer.uiMode = "none";
+                    mediaPlayer.windowlessVideo = true;
+                    mediaPlayer.enableContextMenu = true;
+                    mediaPlayer.Ctlenabled = false;
+                    mediaPlayer.Visible = false;
+                    mediaPlayer.stretchToFit = true;
 
+                    mediaPlayer.Name = "VideoPlayer";
+                    mediaPlayer.Location = new Point(Int32.Parse(xPos), Int32.Parse(yPos));
+                    mediaPlayer.Size = new Size(100, 100);
+
+                    //mediaPlayer.URL = (new Uri(filePath, UriKind.Relative));
+                    
                     picture.MouseHover += new System.EventHandler(picture_MouseHover);
                     picture.MouseLeave += new System.EventHandler(picture_MouseLeave);
                     picture.Click += new System.EventHandler(picture_Click);
@@ -397,14 +416,14 @@ namespace GeoMemories
 
                     void picture_Click(object sender, EventArgs e)
                     {
-                        if (!textbox.Visible)
+                        if (!mediaPlayer.Visible)
                         {
-                            textbox.Visible = true;
+                            mediaPlayer.Visible = true;
                             dontRunHandler = true;
                         }
                         else
                         {
-                            textbox.Visible = false;
+                            mediaPlayer.Visible = false;
                             dontRunHandler = false;
                         }
 
@@ -426,21 +445,7 @@ namespace GeoMemories
         {
 
         }
-
-        private void pictureBox1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-            
-
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -458,6 +463,7 @@ namespace GeoMemories
                 DisplayTweets(Data);
                 DisplayFacebook(Data);
                 DisplayPhotos(Data);
+                DisplayVideos(Data);
             }
         }
     }

@@ -7,3 +7,8 @@ C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assig
 C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\obj\Debug\GeoMemories.csproj.GenerateResource.cache
 C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\obj\Debug\GeoMemories - Assignment 1.exe
 C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\obj\Debug\GeoMemories - Assignment 1.pdb
+C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\bin\Debug\Interop.WMPLib.dll
+C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\obj\Debug\Interop.WMPLib.dll
+C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\User\Documents\Uni\Semester 2 - 2021\ICT 365\Coding\GeoMemories - Assignment 1\GeoMemories - Assignment 1\obj\Debug\GeoMemories.csproj.ResolveComReference.cache
