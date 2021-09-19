@@ -89,7 +89,6 @@ namespace GeoMemories
                     this.Controls.Add(picture);
 
                     picture.Parent = perthMap;
-                    picture.BringToFront();
 
                     var textbox = new TextBox
                     {
@@ -184,7 +183,6 @@ namespace GeoMemories
                     this.Controls.Add(picture);
 
                     picture.Parent = perthMap;
-                    picture.BringToFront();
 
                     var textbox = new TextBox
                     {
@@ -278,7 +276,6 @@ namespace GeoMemories
                     this.Controls.Add(picture);
 
                     picture.Parent = perthMap;
-                    picture.BringToFront();
 
                     var photo = new PictureBox
                     {
@@ -293,6 +290,7 @@ namespace GeoMemories
                     };
 
                     photo.BringToFront();
+
 
                     picture.MouseHover += new System.EventHandler(picture_MouseHover);
                     picture.MouseLeave += new System.EventHandler(picture_MouseLeave);
@@ -360,6 +358,11 @@ namespace GeoMemories
 
                     }
 
+                    string fullPath = Path.GetFullPath(@"../../");
+
+                    string megaFullPath = fullPath + filePath;
+
+                    Console.WriteLine("This is full path: " + fullPath);
 
 
                     var picture = new PictureBox
@@ -375,7 +378,6 @@ namespace GeoMemories
                     this.Controls.Add(picture);
 
                     picture.Parent = perthMap;
-                    picture.BringToFront();
 
                     var mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
                     
@@ -385,15 +387,13 @@ namespace GeoMemories
                     mediaPlayer.uiMode = "none";
                     mediaPlayer.windowlessVideo = true;
                     mediaPlayer.enableContextMenu = true;
-                    mediaPlayer.Ctlenabled = false;
+                    mediaPlayer.Ctlenabled = true;
                     mediaPlayer.Visible = false;
                     mediaPlayer.stretchToFit = true;
 
                     mediaPlayer.Name = "VideoPlayer";
-                    mediaPlayer.Location = new Point(Int32.Parse(xPos), Int32.Parse(yPos));
-                    mediaPlayer.Size = new Size(100, 100);
-
-                    //mediaPlayer.URL = (new Uri(filePath, UriKind.Relative));
+                    mediaPlayer.Location = new Point(Int32.Parse(xPos) + 35, Int32.Parse(yPos) + 70);
+                    mediaPlayer.Size = new Size(400, 300);
                     
                     picture.MouseHover += new System.EventHandler(picture_MouseHover);
                     picture.MouseLeave += new System.EventHandler(picture_MouseLeave);
@@ -420,11 +420,14 @@ namespace GeoMemories
                         {
                             mediaPlayer.Visible = true;
                             dontRunHandler = true;
+                            mediaPlayer.URL = megaFullPath;
+                            mediaPlayer.Ctlcontrols.play();
                         }
                         else
                         {
                             mediaPlayer.Visible = false;
                             dontRunHandler = false;
+                            mediaPlayer.Ctlcontrols.pause();
                         }
 
                         picture.Size = new Size(70, 70);
